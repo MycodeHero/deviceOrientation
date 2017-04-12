@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>屏幕方向检测</title>
+</head>
+<body>
+	x:<span></span><br/>
+	y:<span></span><br/>
+	z:<span></span>
+	<script type="text/javascript">
+		window.addEventListener('deviceorientation', function(e){
+			 document.getElementsByTagName('span')[0].innerHTML = e.alpha;
+			 document.getElementsByTagName('span')[1].innerHTML = e.beta;
+			 document.getElementsByTagName('span')[2].innerHTML = e.gamma;
+		}, true)
+	</script>
+</body>
+</html>
