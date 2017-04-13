@@ -9,11 +9,13 @@
 	alpha:<span></span><br/>
 	beta:<span></span><br/>
 	gamma:<span></span>
+	orienter:<span></span>
 	<script type="text/javascript">
 		window.addEventListener('deviceorientation', function(e){
 			 document.getElementsByTagName('span')[0].innerHTML = e.alpha;
 			 document.getElementsByTagName('span')[1].innerHTML = e.beta;
 			 document.getElementsByTagName('span')[2].innerHTML = e.gamma;
+			 document.getElementsByTagName('span')[3].innerHTML = window.orienter;
 		}, true)
 	</script>
 </body>
