@@ -11,16 +11,18 @@
 	gamma:<span></span><br/>
 	orienter:<span></span>
 	<script type="text/javascript">
-		var timer = null;
-		window.addEventListener('deviceorientation', function(e){
-			clearTimeout(timer);
-			timer = setTimeout(function(){
-				document.getElementsByTagName('span')[0].innerHTML = e.alpha;
-				document.getElementsByTagName('span')[1].innerHTML = e.beta;
-				document.getElementsByTagName('span')[2].innerHTML = e.gamma;
-				document.getElementsByTagName('span')[3].innerHTML = window.orientation;
-			}, 2000);
-		}, true)
+		function show(e){
+			document.getElementsByTagName('span')[0].innerHTML = e.alpha;
+			document.getElementsByTagName('span')[1].innerHTML = e.beta;
+			document.getElementsByTagName('span')[2].innerHTML = e.gamma;
+			document.getElementsByTagName('span')[3].innerHTML = window.orientation;
+		}
+
+		window.addEventListener('deviceorientation', show, true);
+
+		setTimeout(function(){
+			window.removeEventListener('deviceorientation', show);
+		},0)
 	</script>
 </body>
 </html>
